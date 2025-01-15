@@ -1,6 +1,6 @@
 name: Step 1, Create a branch
 
-# This step listens for the learner to create branch `my-first-branch`.
+# This step listens for the learner to create branch `Resident_evil`.
 # This workflow updates from step 1 to step 2.
 
 # This will run every time we create a branch or tag.
@@ -37,14 +37,14 @@ jobs:
     # 1. This repository isn't the template repository.
     # 2. The step is currently 1.
     # 3. The event is a branch.
-    # 4. The branch name is `my-first-branch`.
+    # 4. The branch name is `Resident_evil-1`.
     # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
     if: >-
       ${{ !github.event.repository.is_template
           && needs.get_current_step.outputs.current_step == 1
           && github.ref_type == 'branch'
-          && github.ref_name == 'my-first-branch' }}
+          && github.ref_name == 'Resident_evil' }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows.
     runs-on: ubuntu-latest
@@ -63,4 +63,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 1
           to_step: 2
-          branch_name: my-first-branch
+          branch_name: Resident_evil
